@@ -4,10 +4,15 @@ pipeline {
         label 'jenkins-agent1'
     }
 }
+    options {
+        // Timeout counter starts AFTER agent is allocated
+        timeout(time: 1, unit: 'SECONDS')
+    }
     stages {
         stage('Build') {
             steps {
                 echo "this is building"
+                sleep(10)
             }
         }
         stage('Test') {
