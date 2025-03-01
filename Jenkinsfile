@@ -14,9 +14,9 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                echo "We are learning ($course)"
+                echo "We are learning $course"
                 echo "this is building"
-                sleep(10)
+                // sleep(10)
             }
         }
         stage('Test') {
