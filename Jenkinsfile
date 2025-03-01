@@ -6,7 +6,10 @@ pipeline {
     }
     options {
         // Timeout counter starts AFTER agent is allocated
-        timeout(time: 1, unit: 'HOURS') 
+        timeout(time: 1, unit: 'HOURS')
+
+        // Disables concurrent builds
+        disableConcurrentBuilds()
     }
     environment { 
         course = 'DevOps With AWS'
