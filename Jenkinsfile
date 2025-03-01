@@ -23,7 +23,6 @@ pipeline {
     }
 
     // post build
-sxasxas
     post { 
         failure { 
             echo 'This will works when build got failed'
@@ -35,4 +34,6 @@ sxasxas
             echo 'This is will works when build is successfully executed'
         }
     }
+    sxasxas
+
 }
