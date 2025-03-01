@@ -23,17 +23,16 @@ pipeline {
     }
 
     // post build
-
+sxasxas
     post { 
+        failure { 
+            echo 'This will works when build got failed'
+        }
         always { 
             echo 'I will always say Hello again!'
         }
         success { 
             echo 'This is will works when build is successfully executed'
         }
-        failure { 
-            echo 'This will works when build got failed'
-        }
     }
 }
-bjkasbk
