@@ -19,7 +19,7 @@ pipeline {
             steps {
                 echo "We are learning $course"
                 echo "this is building"
-                // sleep(10)
+                sleep(20)
             }
         }
         stage('Test') {
