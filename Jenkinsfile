@@ -1,16 +1,20 @@
 pipeline {
     agent {
-    node {
-        label 'jenkins-agent1'
+        node {
+            label 'jenkins-agent1'
+        }
     }
-}
     options {
         // Timeout counter starts AFTER agent is allocated
         timeout(time: 1, unit: 'HOURS') 
     }
+    environment { 
+        course = 'DevOps With AWS'
+    }
     stages {
         stage('Build') {
             steps {
+                echo "We are learning ($course)"
                 echo "this is building"
                 sleep(10)
             }
