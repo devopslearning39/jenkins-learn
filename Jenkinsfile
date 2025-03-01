@@ -21,4 +21,18 @@ pipeline {
             }
         }
     }
+
+    // post build
+
+    post { 
+        always { 
+            echo 'I will always say Hello again!'
+        }
+        success { 
+            echo 'This is will works when build is successfully executed'
+        }
+        failure { 
+            echo 'This will works when build got failed'
+        }
+    }
 }
