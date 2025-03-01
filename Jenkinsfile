@@ -34,6 +34,4 @@ pipeline {
             echo 'This is will works when build is successfully executed'
         }
     }
-    sxasxas
-
 }
