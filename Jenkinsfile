@@ -20,7 +20,7 @@ pipeline {
                 echo "We are learning $course"
                 echo "We have configured github webhook as well...."
                 echo "this is building"
-                sleep(20)
+                // sleep(20)
             }
         }
         stage('Test') {
