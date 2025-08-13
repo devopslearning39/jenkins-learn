@@ -5,6 +5,11 @@ pipeline {
         }
    }
 
+   environment { 
+        NAME = 'praveen'
+    }
+
+
     stages {
         stage('Build') {
             steps {
@@ -20,6 +25,11 @@ pipeline {
         stage('Prod') {
             steps {
                 echo "Webhookconfigured properly"
+            }
+        }
+        stage('Fetchng env var') {
+            steps {
+                echo "Person is $NAME"
             }
         }
     }
