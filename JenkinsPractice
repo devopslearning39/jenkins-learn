@@ -17,5 +17,10 @@ pipeline {
                 echo "This is Deploy"
             }
         }
+        stage('Prod') {
+            steps {
+                echo "Webhookconfigured properly"
+            }
+        }
     }
 }
