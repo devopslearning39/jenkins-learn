@@ -25,7 +25,7 @@ pipeline {
     }
     post {
         failure {
-            echo "Jella, script failed pls check.."
+            echo "Jella, script failed pls check..
         }
         always {
             echo "I will always say Hello again!..i don't need success or failure.."
