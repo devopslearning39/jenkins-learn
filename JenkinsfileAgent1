@@ -12,18 +12,21 @@ pipeline {
         choice(name: 'Env', choices: ['Dev', 'Prod'], description: 'Please select which env you wanted to deploy ?')
     }
     stages {
-        stage('Testing when condtion') {
+        stage('Dev env build deploy') {
             when {
                 expression { params.Env == 'Dev' }
             }
             steps {
                 echo 'You have selected Dev env, So we are deploying in dev env.'
             }
+        }
+
+        stage('Prod env build deploy') {
             when {
                 expression { params.Env == 'Prod' }
             }
             steps {
-                echo 'You have selected Prod env, So we cannot deploy in the prod env'
+                echo 'You have seleced Prod env, so we cannot deploy in the prod env.'
             }
         }
     }
