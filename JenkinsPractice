@@ -6,7 +6,7 @@ pipeline {
 
     }
     options {
-        timeout(time: 5, unit: 'SECONDS') 
+        timeout(time: 20, unit: 'SECONDS') 
     }
 
     stages {
@@ -17,7 +17,7 @@ pipeline {
         }
         stage('sleeping') {
             steps {
-               sleep 30
+               sleep 300
             }
         }
         stage('Fetching env vars') {
