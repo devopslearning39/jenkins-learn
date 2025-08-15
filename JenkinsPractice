@@ -1,7 +1,7 @@
 pipeline {
     agent any{
-        
-    }
+
+    
 //    agent {
 //         node {
 //             label 'AGENT-1'
@@ -59,4 +59,6 @@ pipeline {
             echo "I will always say Hello if the build success only.."
         }
     }
+
+}
 }
