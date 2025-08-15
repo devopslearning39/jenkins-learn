@@ -1,0 +1,31 @@
+pipeline {
+    agent {
+        node {
+            label 'AGENT-1'
+        }
+    }
+
+    environment {
+        PERSON="praveen"
+
+    }
+    // options {
+        // timeout(time: 20, unit: 'SECONDS');
+        // disableConcurrentBuilds()
+    // }
+
+    stages {
+        stage('Build') {
+            steps {
+                echo "Hi Praveen, How are you, webhook configure now"
+                sleep 30
+            }
+        }
+        
+        stage('Fetching env vars') {
+            steps {
+                echo "candidate is $PERSON"
+            }
+        }
+    }
+}
