@@ -14,13 +14,13 @@ pipeline {
     stages {
         stage('Testing when condtion') {
             when {
-                param.Env == "Dev"
+                params.Env == "Dev"
             }
             steps {
                 echo 'You have selected Dev env, So we are deploying in dev env.'
             }
             // when {
-            //     param.Env == "Prod"
+            //     params.Env == "Prod"
             // }
             // steps {
             //     echo 'You have selected Prod env, So we cannot deploy in the prod env'
