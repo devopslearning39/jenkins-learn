@@ -5,10 +5,10 @@ pipeline {
         PERSON="praveen"
 
     }
-    options {
+    // options {
         // timeout(time: 20, unit: 'SECONDS');
         // disableConcurrentBuilds()
-    }
+    // }
 
     stages {
         stage('Build') {
