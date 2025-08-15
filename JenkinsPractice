@@ -1,10 +1,20 @@
 pipeline {
     agent any
 
+    environment {
+        PERSON="praveen"
+
+    }
+
     stages {
         stage('Build') {
             steps {
                 echo "Hi Praveen, How are you, webhook configure now......"
+            }
+        }
+        stage('Fetching env vars') {
+            steps {
+                echo "candidate is $PERSON"
             }
         }
     }
