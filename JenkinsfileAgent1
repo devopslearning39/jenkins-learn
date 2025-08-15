@@ -22,7 +22,7 @@ pipeline {
 
     parameters {
         string(name: 'PERSON', defaultValue: 'Hey Praveen', description: 'Who should I say hello to?')
-        text(name: 'BIOGRAPHY', defaultValue: 'How are you, What's app!', description: 'Enter some information about the person')
+        text(name: 'BIOGRAPHY', defaultValue: 'How are you, Whats app!', description: 'Enter some information about the person')
     }
 
 
