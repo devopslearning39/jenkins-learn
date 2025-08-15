@@ -19,10 +19,16 @@ pipeline {
         //     }
         // }
 
+
+    parameters {
+        string(name: 'PERSON', defaultValue: 'Mr Jenkins', description: 'Who should I say hello to?')
+    }
+
     stages {
         stage('Build') {
             steps {
                 echo "Hi Praveen, Now we are testing params.."
+                echo "Hello ${params.PERSON}"
             }
         }        
     }
