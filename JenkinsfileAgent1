@@ -16,11 +16,12 @@ pipeline {
             when {
                 expression { params.Env == 'Dev' }
             }
-            input {
+            
+            steps {
+                input {
                 message "Should we continue to deploy in Dev env ?"
                 ok "Yes, we should."
             }
-            steps {
                 echo 'You have selected Dev env, So we are deploying in dev env.'
             }
         }
@@ -29,11 +30,12 @@ pipeline {
             when {
                 expression { params.Env == 'Prod' }
             }
-            input {
+            
+            steps {
+                input {
                 message "Should we continue to deploy in Prod env ?"
                 ok "Yes, we should."
             }  
-            steps {
                 echo 'You have selected Prod env..'
             }
         }
