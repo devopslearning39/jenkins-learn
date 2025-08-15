@@ -8,21 +8,21 @@ pipeline {
     options {
         ansiColor('xterm')
     }
+
     parameters {
-        choice(name: 'Env', choices: ['Dev', 'Prod'], description: 'Please select which env you wanted to deploy ?')
+        choice(name: 'Env', choices: ['Dev', 'Prod'], description: 'Please select which env you want to deploy to')
     }
+
     stages {
         stage('Dev env build deploy') {
             when {
                 expression { params.Env == 'Dev' }
             }
-            
             steps {
-                input {
-                message "Should we continue to deploy in Dev env ?"
-                ok "Yes, we should."
-            }
-                echo 'You have selected Dev env, So we are deploying in dev env.'
+                script {
+                    input message: "Should we continue to deploy in Dev env ?", ok: "Yes, we should."
+                    echo 'You have selected Dev env. Deploying to Dev...'
+                }
             }
         }
 
@@ -30,13 +30,11 @@ pipeline {
             when {
                 expression { params.Env == 'Prod' }
             }
-            
             steps {
-                input {
-                message "Should we continue to deploy in Prod env ?"
-                ok "Yes, we should."
-            }  
-                echo 'You have selected Prod env..'
+                script {
+                    input message: "Should we continue to deploy in Prod env ?", ok: "Yes, we should."
+                    echo 'You have selected Prod env. Deploying to Prod...'
+                }
             }
         }
     }
