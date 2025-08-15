@@ -4,7 +4,7 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                echo "Hi Praveen, How are you!"
+                echo "Hi Praveen, How are you, webhook configure now"
             }
         }
     }
