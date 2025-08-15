@@ -5,26 +5,25 @@ pipeline {
         }
     }
 
-    environment {
-        PERSON="praveen"
+    // environment {
+    //     PERSON="praveen"
 
-    }
+    // }
     // options {
         // timeout(time: 20, unit: 'SECONDS');
         // disableConcurrentBuilds()
     // }
+    // stage('Fetching env vars') {
+        //     steps {
+        //         echo "candidate is $PERSON"
+        //     }
+        // }
 
     stages {
         stage('Build') {
             steps {
-                echo "Hi Praveen, How are you, webhook configure now"
+                echo "Hi Praveen, Now we are testing params.."
             }
-        }
-        
-        stage('Fetching env vars') {
-            steps {
-                echo "candidate is $PERSON"
-            }
-        }
+        }        
     }
 }
