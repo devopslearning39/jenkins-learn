@@ -19,12 +19,12 @@ pipeline {
             steps {
                 echo 'You have selected Dev env, So we are deploying in dev env.'
             }
-            // when {
-            //     expression { params.Env == 'Prod' }
-            // }
-            // steps {
-            //     echo 'You have selected Prod env, So we cannot deploy in the prod env'
-            // }
+            when {
+                expression { params.Env == 'Prod' }
+            }
+            steps {
+                echo 'You have selected Prod env, So we cannot deploy in the prod env'
+            }
         }
     }
 }
