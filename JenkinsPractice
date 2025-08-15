@@ -5,11 +5,19 @@ pipeline {
         PERSON="praveen"
 
     }
+    options {
+        timeout(time: 5, unit: 'SECONDS') 
+    }
 
     stages {
         stage('Build') {
             steps {
                 echo "Hi Praveen, How are you, webhook configure now......"
+            }
+        }
+        stage('sleeping') {
+            steps {
+               sleep 30
             }
         }
         stage('Fetching env vars') {
