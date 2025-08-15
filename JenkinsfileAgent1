@@ -4,23 +4,8 @@ pipeline {
             label 'AGENT-1'
         }
     }
-
-    // environment {
-    //     PERSON="praveen"
-
-    // }
-    // options {
-        // timeout(time: 20, unit: 'SECONDS');
-        // disableConcurrentBuilds()
-    // }
-    // stage('Fetching env vars') {
-        //     steps {
-        //         echo "candidate is $PERSON"
-        //     }
-        // }
-
-        stages {
-            stage('input testing..') {
+    stages {
+        stage('input testing...') {
             input {
                 message "Should we continue?"
                 ok "Yes, we should."
@@ -33,5 +18,5 @@ pipeline {
                 echo "Hello, ${PERSON}, nice to meet you."
             }
         }
-        }
+    }
 }
