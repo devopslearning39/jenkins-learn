@@ -4,6 +4,10 @@ pipeline {
             label 'AGENT-1'
         }
     }
+
+    options{
+        ansiColor('xterm')
+    }
     stages {
         stage('Testing when condtion') {
             when {
