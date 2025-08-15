@@ -8,13 +8,22 @@ pipeline {
     options {
         ansiColor('xterm')
     }
+    parameters {
+        choice(name: 'Env', choices: ['Dev', 'Prod'], description: 'Please select which env you wanted to deploy ?')
+    }
     stages {
         stage('Testing when condtion') {
             when {
-                branch 'production'
+                param.Env == "Dev"
             }
             steps {
-                echo 'Deploying'
+                echo 'You have selected Dev env, So we are deploying in dev env.'
+            }
+            when {
+                param.Env == "Prod"
+            }
+            steps {
+                echo 'You have selected Prod env, So we cannot deploy in the prod env'
             }
         }
     }
