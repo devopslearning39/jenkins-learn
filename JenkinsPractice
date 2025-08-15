@@ -6,7 +6,8 @@ pipeline {
 
     }
     options {
-        timeout(time: 200, unit: 'SECONDS') 
+        timeout(time: 20, unit: 'SECONDS');
+        disableConcurrentBuilds()
     }
 
     stages {
@@ -17,7 +18,7 @@ pipeline {
         }
         stage('sleeping') {
             steps {
-               sleep 300
+            //    sleep 300
             }
         }
         stage('Fetching env vars') {
