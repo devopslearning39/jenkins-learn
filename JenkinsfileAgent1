@@ -5,11 +5,13 @@ pipeline {
         }
     }
     stages {
-        when {
+        stage('Testing when condtion') {
+            when {
                 branch 'production'
             }
             steps {
                 echo 'Deploying'
             }
+        }
     }
 }
